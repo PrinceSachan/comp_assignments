@@ -1,0 +1,44 @@
+{
+    "categories": [
+        {
+            "categoryName": "CSPM Executive Dashboard",
+            "widgets": [
+                {
+                    "title": "CSPM Executive Dashboard Title 1",
+                    "description": "Some description of title 1"
+                },
+                {
+                    "title": "CSPM Executive Dashboard Title 2",
+                    "description": "Some description of title 2"
+                }
+            ]
+        },
+        {
+            "categoryName": "CWPP Dashboard",
+            "widgets": [
+                {
+                    "title": "CWPP Dashboard Title1",
+                    "description": "Some description of CWPP Dashboard title 1"
+                }
+            ]
+        },
+        {
+            "categoryName": "Registry Scan",
+            "widgets": [
+                {
+                    "title": "Registry Scan of title1",
+                    "description":"Some description of Resgitry Scan title 1"
+                }
+            ]
+        },
+        {
+            "categoryName": "Ticket Scan",
+            "widgets": [
+                {
+                    "title": "Ticket Scan",
+                    "description": "Some description of Ticket scan title 1"
+                }
+            ]
+        }
+    ]
+}
