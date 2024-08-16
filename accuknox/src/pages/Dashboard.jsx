@@ -1,18 +1,20 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { 
-  Plus,
+import {
   RefreshCw,
   EllipsisVertical,
   ChevronDown,
   Clock,
-
 } from 'lucide-react';
-import dashboardConfig from '../data/dashboardConfig.json';
 import Cards from '@/components/Cards';
 import Addwidget from '@/components/Addwidget';
+import Rightsheet from '@/components/Rightsheet';
+import { useSelector } from 'react-redux';
+
 
 const Dashboard = () => {
+  const categories = useSelector((state) => state.widgets.data.categories)
+  console.log(categories)
   return (
     <>
       <div className='flex justify-between mx-8 my-4'>
@@ -20,11 +22,7 @@ const Dashboard = () => {
           CNAPP Dashboard
         </div>
         <div className='flex judtify-between space-x-4'>
-          <Button
-            className='bg-white text-gray-500 h-8 p-2 hover:bg-white focus:outline-none focus:ring-1 focus:ring-black'
-          >
-            Add Widget <Plus size={15} className='ml-1' />
-          </Button>
+          <Rightsheet />
           <Button
             className='bg-white text-gray-500 h-8 p-2 hover:bg-white focus:outline-none focus:ring-1 focus:ring-black'
           >
@@ -42,7 +40,7 @@ const Dashboard = () => {
           </Button>
         </div>
       </div>
-      {dashboardConfig.categories.map((category, index) => (
+      {categories.map((category, index) => (
         <div key={index} className='mx-10'>
           <div>
             <div className='font-semibold text-sm pb-2'>
@@ -52,11 +50,11 @@ const Dashboard = () => {
               {category.widgets.length > 0 ? (
                 category.widgets.map((widget, i) => (
                   <div key={i} className='pb-2'>
-                    <Cards title={widget.title} description={widget.description} />
+                    <Cards categoryName={category.categoryName} title={widget.title} description={widget.description} id={i} />
                   </div>
                 ))
               ) : null }
-              <Addwidget title={category.categoryName} />
+              <Addwidget categoryTitle={category.categoryName} />
             </div>
           </div>
         </div>
