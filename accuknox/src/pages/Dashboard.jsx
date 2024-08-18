@@ -43,7 +43,7 @@ const Dashboard = () => {
       {categories.map((category, index) => (
         <div key={index} className='mx-10'>
           <div>
-            <div className='font-semibold text-sm pb-2'>
+            <div className='font-semibold text-sm py-2'>
               {category.categoryName}
             </div>
             <div className='grid grid-cols-3 gap-3'>

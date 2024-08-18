@@ -1,8 +1,14 @@
 import React from 'react'
-import { Button } from './ui/button'
 import { X } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 import { removeWidget } from '@/features/widgetSlice';
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 const Cards = ({title, description, id, categoryName}) => {
   const dispatch = useDispatch()
@@ -15,17 +21,22 @@ const Cards = ({title, description, id, categoryName}) => {
     }))
   }
   return (
-    <div className='bg-white h-40 rounded-lg shadow-sm'>
-        <div className='pt-4 pl-4 font-bold flex justify-between'>
+    <Card className='bg-white h-40 rounded-lg shadow-sm'>
+      <CardHeader>
+        <CardTitle className='pt-4 text-md pt-0 font-bold flex justify-between'>
           {title}
           <button className='pr-3' onClick={removeWidgetHandler}>
             <X size={15} strokeWidth={3} />
           </button>
-        </div>
-        <div className='pl-4 pt-2 text-sm text-gray-500'>
-          {description}
-        </div>
-    </div>
+        </CardTitle>
+        <CardDescription>
+          {
+            description.length > 100 ? 
+            `${description.substring(0, 120)}...` : `${description}`
+          }
+        </CardDescription>
+      </CardHeader>
+    </Card>
   )
 }
 

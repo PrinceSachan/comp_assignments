@@ -24,11 +24,7 @@ import { useDispatch, useSelector } from 'react-redux';
   
 const Rightsheet = () => {
   const categories = useSelector((state) => state.widgets.data.categories)
-  const dispatch = useDispatch()
-
-  const removeWidgetHandler = () => {
-
-  }
+  const [check, setCheck] = useState(true)
 
   return (
     <div>
@@ -68,7 +64,7 @@ const Rightsheet = () => {
                                 {category.widgets.length > 0 ? (
                                 category.widgets.map((widget, i) => (
                                     <div key={i} className="flex items-center my-2 mx-4 p-2 rounded border border-solid border-slate-800">
-                                        <Checkbox checked={widget.done} />
+                                        <Checkbox checked={check} />
                                         <Label className="ml-2">{widget.title}</Label>
                                     </div>
                                 ))
@@ -79,12 +75,6 @@ const Rightsheet = () => {
                         );
                     })}
                 </Tabs>
-                {/* <SheetFooter className='mt-auto mr-4 mb-2'>
-                    <SheetClose className='space-x-2'>
-                        <Button variant="outlined" className='border border-solid border-slate-900 h-8'>Cancel</Button>
-                        <Button className='h-8'>Confirm</Button>
-                    </SheetClose>
-                </SheetFooter> */}
             </SheetContent>
         </Sheet>
     </div>
