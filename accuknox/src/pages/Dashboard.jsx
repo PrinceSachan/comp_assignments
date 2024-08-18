@@ -46,7 +46,7 @@ const Dashboard = () => {
             <div className='font-semibold text-sm py-2'>
               {category.categoryName}
             </div>
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 gap-3 md:grid-cols-3'>
               {category.widgets.length > 0 ? (
                 category.widgets.map((widget, i) => (
                   <div key={i} className='pb-2'>

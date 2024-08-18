@@ -47,7 +47,7 @@ const Addwidget = ({categoryTitle}) => {
   return (
     <div>
         <div className='bg-white h-40 rounded-lg shadow-sm flex flex-col justify-center'>
-          <Dialog>
+          <Dialog className=''>
             <DialogTrigger>
               <Button variant="outline" className='h-8'>
                 <Plus size={15} className='mr-2' /> Add Widget 

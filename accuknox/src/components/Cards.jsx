@@ -5,7 +5,6 @@ import { removeWidget } from '@/features/widgetSlice';
 import {
   Card,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -23,8 +22,10 @@ const Cards = ({title, description, id, categoryName}) => {
   return (
     <Card className='bg-white h-40 rounded-lg shadow-sm'>
       <CardHeader>
-        <CardTitle className='pt-4 text-md pt-0 font-bold flex justify-between'>
-          {title}
+        <CardTitle className='pt-4 text-md pt-0 flex justify-between'>
+          <div className='font-bold text-gray-700'>
+            {title}
+          </div>
           <button className='pr-3' onClick={removeWidgetHandler}>
             <X size={15} strokeWidth={3} />
           </button>
